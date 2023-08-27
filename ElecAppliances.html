@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Electronic Appliances | MyCommercio.net</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="script.js" async></script>
+</head>
+
+<body>
+
+  <header>
+    <center>
+      <ul>
+        <li class="Ad"> Sales ending soon! Hurry up for best discounts!! </li>
+        <li class="Login"><a href="#myModalLogin"
+            onclick="document.getElementById('myModalLogin').style.display='block'" id="myBtn"><b> Login </b></a></li>
+        <li class="Signup"><a href="#myModalSignup"
+            onclick="document.getElementById('myModalSignup').style.display='block'" id="myBtn"><b> Sign Up </b></a>
+        </li>
+
+        <li class="Cart"><a href="Cart.html"> <img class="Cart" src="img/cart.png"></a></li>
+      </ul>
+      <div id="myModalLogin" class="modalLS">
+        <!-- Modal content -->
+        <div class="modal-content3">
+          <span class="close" onclick="document.getElementById('myModalLogin').style.display='none'"
+            style="color:black">x</span>
+          <center><img class="ava" src="img/DP3.png"></center>
+          <center><b style="font-size:30px;"><br> Log In </b></center><br>
+          <form name="myForm" onsubmit="logindone()" method="post">
+            <ul style="margin-left:0%; padding-left:0%;">
+              <li style="margin-left:0%; padding-left:0%;">
+                <input type="email" name="email" class="email" placeholder="Email" required><br>
+              </li>
+              <br>
+              <li>
+                <input type="password" name="password" class="password" placeholder="Password" required><br>
+              </li>
+              <br>
+              <li>
+                <b><a><input type="submit" class="submitLogin" value="Submit"></a></b>
+              </li>
+              <br><br>
+              <b style="font-size:20px;"><br>New to MyCommercio? Sign Up now!</b>
+            </ul>
+          </form>
+        </div>
+      </div>
+      <div id="myModalSignup" class="modalLS">
+        <!-- Modal content -->
+        <div class="modal-content4">
+          <span class="close" onclick="document.getElementById('myModalSignup').style.display='none'"
+            style="color:black">x</span>
+          <img class="ava" src="img/DP3.png">
+          <center><b style="font-size:200%;"><br> Sign Up </b></center>
+          <form name="myForm" onsubmit="return checkPassword(this)" method="post">
+            <ul style="margin-left:0%; padding-left:0%;">
+              <li style="margin-left:0%; padding-left:0%;">
+                <input type="text" name="fname" placeholder="First Name" class="fname" required>
+              </li>
+              <li style="margin-left:0%; padding-left:0%;">
+                <input type="text" name="lname" class="lname" placeholder="Last Name" required><br>
+              </li>
+              <br><b style="font-size: 130%;">Gender:</b>
+              <input type="radio" id="male" name="gender" value="male">
+              <label for="male" style="font-size:120%;">Male</label>
+              <input type="radio" id="female" name="gender" value="female">
+              <label for="female" style="font-size:120%;">Female</label>
+              <input type="radio" id="other" name="gender" value="other">
+              <label for="other" style="font-size:120%;">Other</label>
+              <br><br><strong style="font-size: 120%;">Date of Birth: </strong>
+              <input type="date" id="birthday" name="birthday"><br>
+              <li style="margin-left:0%; padding-left:0%;">
+                <br><input type="email" name="email" placeholder="Email" class="email" required><br>
+              </li>
+              <br>
+              <li>
+                <input type="password" name="password" placeholder="Password" class="password" required><br>
+              </li>
+              <li style="margin-left:3%; padding-left:0%; color:red; font-size: 16px;">
+                Must include a digit and a special character<br>
+              </li>
+              <br>
+              <li>
+                <input type="password" name="apassword" placeholder="Confirm Password" class="apassword" required><br>
+              </li>
+              <br>
+              <li>
+                <b><a><input type="submit" class="submitSignup" value="Submit"></a></b>
+              </li>
+              <br><br>
+              <b style="font-size:20px;"><br>Already a customer? Login now!</b>
+            </ul>
+          </form>
+        </div>
+      </div>
+
+      <center>
+        <section class="LBS">
+          <ul>
+            <li class="Call"><a href="#Call"> <img class="Call" src="img/phone.jpg"></a></li>
+            <li class="Dial"> To order online, visit: www.MyCommercio.net or Call us at: +91 9834125423 <a
+                href="#Dial"></a></li>
+            <li class="Brand"><a href="#Brand"><img class="Brand" src="img/IMG_20230811_130515.png"></a></li>
+            <input type="text" placeholder="Search MyCommercio.net" name="search">
+            <button type="submit"><img class="Search" src="img/search1.jpg"></button>
+          </ul>
+        </section>
+      </center>
+
+      <center>
+        <nav>
+          <ul>
+            <a href="index.html">
+              <li class="Home"> Home </li>
+            </a>
+            <a href="Grocery.html">
+              <li class="Groceries">Groceries </li>
+            </a>
+            <a href="ElecAppliances.html">
+              <li class="Household">Electronic Appliances </li>
+            </a>
+            <a href="PersonalCare.html">
+              <li class="PersonalCare"> Personal Care </li>
+            </a>
+            <a href="PackedFoods.html">
+              <li class="PackedFoods"> Packed Foods </li>
+            </a>
+            <a href="AboutUs.html">
+              <li class="AboutUs"> About Us </li>
+            </a>
+            <a href="ContactUs.html">
+              <li class="ContactUs">Contact Us </li>
+            </a>
+          </ul>
+        </nav>
+      </center>
+  </header>
+
+  <div class="Card">
+    <div class="row1">
+      <center>
+        <div class="column1">
+          <ul>
+            <li class="Image">
+              <img class="itemImg" src="img/llyod.webp" style="height: 175px; width: 220px;">
+            </li>
+            <br>
+            <li class="Name">
+              Lloyd 1.5 ton 3 star Split Inverter AC - White(Copper Condenser)
+            </li>
+            <li>
+              <b>Rs. 33,499</b> &nbsp <s>
+                <font color="red">59,990</font>
+              </s>
+              <font color="green">&nbsp&nbsp 44% OFF</font>
+            </li>
+            <li style="text-align:left">
+              <p>Auto Restart<br>Energy Efficient, Ensures comfort</p>
+            </li>
+            <li class="ViewMore">
+              <a href="#myModalAC" onclick="document.getElementById('myModalAC').style.display='block'" id="myBtn"> View
+                More </a>
+            </li>
+            <div id="myModalAC" class="modal">
+              <!-- Modal content -->
+              <div class="modal-content">
+                <span class="close" onclick="document.getElementById('myModalAC').style.display='none'">&times;</span>
+                <div class="ModalImage" style="text-align:left">
+                  <img class="MItem" src="img/llyod.webp" style="height: 250px; width: 460px;">
+                </div>
+                <div class="ModalDetails">
+                  <ul>
+                    <li>
+                      <ul style="text-align:left">
+                        <li> <span class="MName">
+                            Lloyd 1.5 ton 3 star Split Inverter AC - White(Copper Condenser)</span>
+                        </li>
+                        <br>
+                        <li>
+                          <b> <span class="MPrice">Rs. 33,499</span></b> &nbsp <s>
+                            <font color="red">59,990</font>
+                          </s>
+                          <font color="green">&nbsp&nbsp 44% OFF</font>
+                        </li>
+                        <br>
+                        <br>
+                        <li>
+                          <button class="AddToCart"> ADD TO CART </button>
+                        </li>
+                        <br>
+                        <br>
+                        <li>
+                          <b class="desc" style="color:rgb(96, 96, 96)">Description:</b>
+                          <ul style="width: 75%; float: right">
+                            <li style="width: 100%">
+                              <b>High Ambient Cooling</b><br>
+                              Thanks to the Turbo mode, this AC instantly cools your room down even at 50-degrees.
+                            </li>
+                            <li style="width: 100%">
+                              <p><b>3 Star BEE rating 2023</b><br>
+                                For energy savings upto 15%(compared to Non-Inverter 1 Star)</p>
+                            </li>
+                            <li style="width: 100%">
+                              <p><b>Auto Restart</b><br>
+                                No need to manually reset the settings post power-cut.</p>
+                            </li>
+                            <li style="width: 100%">
+                              <p><b>Sleep Mode</b><br>
+                                Auto-adjusts the temperature to ensure comfort during your sleep</p>
+                            </li>
+                            <li style="width: 100%">
+                              <p><b>Copper</b><br>
+                                Energy-Efficient, best in class cooling with easy maintenance</p>
+                            </li>
+
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </ul>
+        </div>
+        <div class="column1">
+          <ul>
+            <li class="Image">
+              <img class="itemImg" src="img/iphone14.webp" style="height: 190px;">
+            </li>
+            <br>
+            <li class="Name">
+              APPLE iPhone 14 (Grey, 128 GB)
+            </li>
+            <li>
+              <b>Rs. 66,999</b> &nbsp <s>
+                <font color="red">79,999</font>
+              </s>
+              <font color="green">&nbsp&nbsp 16% OFF</font>
+            </li>
+            <li style="text-align:left">
+              <p>A15 Bionic Chip,<br>Core Processor, Hexa Core</p>
+            </li>
+            <li class="ViewMore">
+              <a href="#myModalTowel" onclick="document.getElementById('myModalTowel').style.display='block'"
+                id="myBtn"> View More </a>
+            </li>
+            <div id="myModalTowel" class="modal">
+              <!-- Modal content -->
+              <div class="modal-content">
+                <span class="close"
+                  onclick="document.getElementById('myModalTowel').style.display='none'">&times;</span>
+                <div class="ModalImage" style="text-align:left">
+                  <img class="MItem" src="img/iphone14.webp" style="height: 370px;">
+                </div>
+                <div class="ModalDetails">
+                  <ul>
+                    <li>
+                      <ul style="text-align:left">
+                        <li class="MName">
+                          <strong>APPLE iPhone 14 (Grey, 128 GB)</strong>
+                        </li>
+                        <br>
+                        <li>
+                          <b> <span class="MPrice">Rs. 66,999</span< /b> &nbsp <s>
+                                <font color="red">79,999</font>
+                              </s>
+                              <font color="green">&nbsp&nbsp 16% OFF</font>
+                        </li>
+                        <br>
+                        <br>
+                        <li>
+                          <button class="AddToCart"> ADD TO CART </button>
+                        </li>
+                        <br>
+                        <br>
+                        <li>
+                          <b class="desc" style="color:rgb(96, 96, 96)">Description:</b>
+                          <ul style="width: 75%; float: right">
+                            <li style="width: 100%">
+                              <b>Rear Camera</b><br>
+                              12MP + 12MP, Great Zoom
+                            </li>
+                            <li style="width: 100%">
+                              <p><b>Display</b><br>
+                                6.1 inch Super Retina XDR Display</p>
+                            </li>
+                            <li style="width: 100%">
+                              <p><b>Battery</b><br>
+                                3279 mAh, Long Battery Life</p>
+                            </li>
+                            <li style="width: 100%">
+                              <p><b>In the Box</b><br>
+                                Handset, USB-C to Lightning Cable, Documentation</p>
+                            </li>
+                            <li style="width: 100%">
+                              <p><b>Other Details</b><br>
+                                Dual Sim, 1 Year Warranty for phone and 6 months warranty for In-Box Accessories</p>
+                            </li>
+
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+          </ul>
+        </div>
+        <div class="column1">
+          <ul>
+            <li class="Image">
+              <img class="itemImg" src="img/dryer1.jpeg" style="height: 176px;">
+            </li>
+            <br>
+            <li class="Name">
+              Havells HP8100/60 Hair Dryer <br> (1000 W, Light Red)
+            </li>
+            <li>
+              <b>Rs. 859</b> &nbsp <s>
+                <font color="red">1045</font>
+              </s>
+              <font color="green">&nbsp&nbsp 17% OFF</font>
+            </li>
+            <li style="text-align:left">
+              <p>1000 W, 220-240V <br>1-year guarantee</p>
+            </li>
+            <li class="ViewMore">
+              <a href="#myModalDryer" onclick="document.getElementById('myModalDryer').style.display='block'"
+                id="myBtn"> View More </a>
+            </li>
+            <div id="myModalDryer" class="modal">
+              <!-- Modal content -->
+              <div class="modal-content">
+                <span class="close"
+                  onclick="document.getElementById('myModalDryer').style.display='none'">&times;</span>
+                <div class="ModalImage" style="text-align:left">
+                  <img class="MItem" src="img/dryer1.jpeg" style="height: 370px;">
+                </div>
+                <div class="ModalDetails">
+                  <ul>
+                    <li>
+                      <ul style="text-align:left">
+                        <li class="MName">
+                          Havells HP8100/60 Hair Dryer (1000 W, Light Red)
+                        </li>
+                        <br>
+                        <li>
+                          <b><span class="MPrice"> Rs. 859</span></b> &nbsp <s>
+                            <font color="red">1045</font>
+                          </s>
+                          <font color="green">&nbsp&nbsp 17% OFF</font>
+                        </li>
+                        <br>
+                        <br>
+                        <li>
+                          <a href="#" class="AddToCart"> ADD TO CART </a>
+                        </li>
+                        <br>
+                        <br>
+                        <li>
+                          <b class="desc" style="color:rgb(96, 96, 96)">Description:</b>
+                          <ul style="width: 75%; float: right">
+                            <li style="width: 100%">
+                              Compact and ergonomic, this hairdryer benefits from a clever modern design.
+                              This results in a dryer that is light and easy to handle yet small enough to
+                              store virtually anywhere.This 1000W hairdryer creates the optimum level of
+                              airflow and gentle drying power, for beautiful results every day.
+                              This results in precise styling and is great for touch ups or to finish a style.
+                              Careful drying with 2 flexible heat settings.
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </ul>
+        </div>
+        <div class="column1">
+          <ul>
+            <li class="Image">
+              <img class="itemImg" src="img/dell.webp" style="height: 165px;">
+            </li>
+            <br>
+            <li class="Name">
+              DELL INSPIRON New 15 Laptop (Core i5 12th Gen)
+            </li>
+            <li>
+              <b>Rs. 54,490</b> &nbsp <s>
+                <font color="red">72,180</font>
+              </s>
+              <font color="green">&nbsp&nbsp 24% OFF</font>
+            </li>
+            <li style="text-align:left">
+              <p>Thin and Light Laptop<br>14.96 inch, Carbon Black, 1.65 kg</p>
+            </li>
+            <li class="ViewMore">
+              <a href="#myModalBlender" onclick="document.getElementById('myModalBlender').style.display='block'"
+                id="myBtn"> View More </a>
+            </li>
+            <div id="myModalBlender" class="modal">
+              <!-- Modal content -->
+              <div class="modal-content">
+                <span class="close"
+                  onclick="document.getElementById('myModalBlender').style.display='none'">&times;</span>
+                <div class="ModalImage" style="text-align:left">
+                  <img class="MItem" src="img/dell.webp">
+                </div>
+                <div class="ModalDetails">
+                  <ul>
+                    <li>
+                      <ul style="text-align:left">
+                        <li class="MName">
+                          DELL INSPIRON New 15 Laptop (Core i5 12th Gen)
+                        </li>
+                        <br>
+                        <li>
+                          <b><span class="MPrice">Rs. 54,490</span></b> &nbsp <s>
+                            <font color="red">72,180</font>
+                          </s>
+                          <font color="green">&nbsp&nbsp 24% OFF</font>
+                        </li>
+                        <br>
+                        <br>
+                        <li>
+                          <a href="#" class="AddToCart"> ADD TO CART </a>
+                        </li>
+                        <br>
+                        <br>
+                        <li>
+                          <b class="desc" style="color:rgb(96, 96, 96)">Description:</b>
+                          <ul style="width: 75%; float: right">
+                            <li style="width: 100%">
+                              Processor <br> Intel Core i5 12th Gen
+                            </li><br>
+                            <li style="width: 100%">
+                              RAM | SSD Storage <br> 8 GB | 512 GB
+                            </li><br>
+                            <li style="width: 100%">
+                              Screen size | Display <br> 14.96 inch | Full HD Display
+                            </li><br>
+                            <li style="width: 100%">
+                              Operating System <br> Windows 11
+                            </li><br>
+                            <li style="width: 100%">
+                              Other Details <br> MS Office is pre-installed
+                            </li>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                  </li>
+          </ul>
+        </div>
+    </div>
+    </ul>
+  </div>
+  <div class="column1">
+    <ul>
+      <li class="Image">
+        <img class="itemImg" src="img/mixer.jpeg">
+      </li>
+      <br>
+      <li class="Name">
+        Butterfly Rapid 4 Jar 750 watts 750 W Juicer Mixer Grinder (Black)
+      </li>
+      <li>
+        <b>Rs. 2849</b> &nbsp <s>
+          <font color="red">5499</font>
+        </s>
+        <font color="green">&nbsp&nbsp 48% OFF</font>
+      </li>
+      <li style="text-align:left">
+        <p>User-friendly 3-Speed Knob<br>Stainless Steel Jars</p>
+      </li>
+      <li class="ViewMore">
+        <a href="#myModalMixer" onclick="document.getElementById('myModalMixer').style.display='block'" id="myBtn"> View
+          More </a>
+      </li>
+      <div id="myModalMixer" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close" onclick="document.getElementById('myModalMixer').style.display='none'">&times;</span>
+          <div class="ModalImage" style="text-align:left">
+            <img class="MItem" src="img/mixer.jpeg">
+          </div>
+          <div class="ModalDetails">
+            <ul>
+              <li>
+                <ul style="text-align:left">
+                  <li class="MName">
+                    Butterfly Rapid 4 Jar 750 watts 750 W Juicer Mixer Grinder (Black, 4 Jars)
+                  </li>
+                  <br>
+                  <li>
+                    <b><span class="MPrice"> Rs. 2849</span></b> &nbsp <s>
+                      <font color="red">5499</font>
+                    </s>
+                    <font color="green">&nbsp&nbsp 48% OFF</font>
+                  </li>
+                  <br>
+                  <br>
+                  <li>
+                    <a href="#" class="AddToCart"> ADD TO CART </a>
+                  </li>
+                  <br>
+                  <br>
+                  <li>
+                    <b class="desc" style="color:rgb(96, 96, 96)">Description:</b>
+                    <ul style="width: 75%; float: right">
+                      <li style="width: 100%">
+                        <p><b>User-friendly 3-Speed Knob</b><br>
+                          Using the Speed Knob, you can select the desired speed while grinding and mixing your food
+                          items. It also comes with the 'whip' feature that allows you to run the mixer grinder at its
+                          highest speed, so you can blend delicious smoothies, grind chillies and other veggies in
+                          seconds.</p>
+                      </li>
+                      <li style="width: 100%">
+                        <p><b>Stainless Steel Jars</b><br>
+                          These attractive jars are made from premium quality stainless steel, ensuring rust-free
+                          maintenance and enhanced durability.</p>
+                      </li>
+                      <li style="width: 100%">
+                        <p><b>Sharp Rotating Blades</b><br>
+                          To meet your precise chopping and grinding requirements, Butterfly has made its rotator blades
+                          - razor-sharp. This helps in chopping hard and coarse ingredients such as, black pepper,
+                          cardamom and other ingredients in very little time.</p>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </ul>
+  </div>
+  <div class="column1">
+    <ul>
+      <img class="itemImg" src="img/cam.jpg" style="height: 165.6px;">
+      </li>
+      <br><br>
+      <li class="Name">
+        Canon EOS 3000D DSLR Camera Body, 18-55mm (Black)
+      </li>
+      <li>
+        <b>Rs. 33,490</b> &nbsp <s>
+          <font color="red">35,995</font>
+        </s>
+        <font color="green">&nbsp&nbsp 6% OFF</font>
+      </li>
+      <li style="text-align:left">
+        <p>Effective pixels: 18 MP<br> Sensor Type: CMOS, Full HD</p>
+      </li>
+      <li class="ViewMore">
+        <a href="#myModalBookShelf" onclick="document.getElementById('myModalBookShelf').style.display='block'"
+          id="myBtn"> View More </a>
+      </li>
+      <div id="myModalBookShelf" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close" onclick="document.getElementById('myModalBookShelf').style.display='none'">&times;</span>
+          <div class="ModalImage" style="text-align:left">
+            <img class="MItem" src="img/cam.jpg" style="height: 320px;">
+          </div>
+          <div class="ModalDetails">
+            <ul>
+              <li>
+                <ul style="text-align:left">
+                  <li class="MName">
+                    Canon EOS 3000D DSLR Camera Body, 18-55mm (Black)
+                  </li>
+                  <br>
+                  <li>
+                    <b><span class="MPrice"> Rs. 33,490</span></b> &nbsp <s>
+                      <font color="red">35,995</font>
+                    </s>
+                    <font color="green">&nbsp&nbsp 6% OFF</font>
+                  </li>
+                  <br>
+                  <br>
+                  <li>
+                    <a href="#" class="AddToCart"> ADD TO CART </a>
+                  </li>
+                  <br>
+                  <br>
+                  <li>
+                    <b class="desc" style="color:rgb(96, 96, 96)">Description:</b>
+                    <ul style="width: 75%; float: right">
+                      <li style="width: 100%">
+                        <b>Type C and Mini HDMI</b><br>
+                      </li>
+                      <li style="width: 100%">
+                        <b>9 Auto Focus Points, 3X Optical zoom</b><br>
+                      </li>
+                      <li style="width: 100%">
+                        <p><b>APS-C CMOS</b><br>
+                          sensor-which is 25 times larger than a typical Smartphone sensor</p>
+                      </li>
+                      <li style="width: 100%">
+                        <p><b>Video Recording at 1080p on 30fps</b><br>
+                      </li>
+                      <li style="width: 100%">
+                        <p><b>Warranty</b><br>
+                          2 Year Warranty</p>
+                      </li>
+                      <li style="width: 100%">
+                        <b>Full HD, Wifi Available</b><br>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </ul>
+  </div>
+  <div class="column1">
+    <ul>
+      <li class="Image">
+        <img class="itemImg" src="img/iron.jpg">
+      </li>
+      <br>
+      <li class="Name">
+        LongWay Kwid 1100 W Dry Iron(Blue, White)
+      </li>
+      <li>
+        <b> Rs. 349</b> &nbsp <s>
+          <font color="red">990</font>
+        </s>
+        <font color="green">&nbsp&nbsp 65% OFF</font>
+      </li>
+      <li style="text-align:left">
+        <p>Lightweight Body<br>Adjustable Thermostat Control<br> Shockproof Handle</p>
+      </li>
+      <li class="ViewMore">
+        <a href="#myModalSofa" onclick="document.getElementById('myModalSofa').style.display='block'" id="myBtn"> View
+          More </a>
+      </li>
+      <div id="myModalSofa" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close" onclick="document.getElementById('myModalSofa').style.display='none'">&times;</span>
+          <div class="ModalImage" style="text-align:left">
+            <img class="MItem" src="img/iron.jpg" style="height: 250px;">
+          </div>
+          <div class="ModalDetails">
+            <ul>
+              <li>
+                <ul style="text-align:left">
+                  <li class="MName">
+                    LongWay Kwid 1100 W Dry Iron(Blue, White)
+                  </li>
+                  <br>
+                  <li>
+                    <b><span class="MPrice"> Rs. 349</span></b> &nbsp <s>
+                      <font color="red">990</font>
+                    </s>
+                    <font color="green">&nbsp&nbsp 65% OFF</font>
+                  </li>
+                  <br>
+                  <br>
+                  <li>
+                    <a href="#" class="AddToCart"> ADD TO CART </a>
+                  </li>
+                  <br>
+                  <br>
+                  <li>
+                    <b class="desc" style="color:rgb(96, 96, 96)">Description:</b>
+                    <ul style="width: 75%; float: right">
+                      <li style="width: 100%">
+                        <b>180 degree Swivel Cord</b><br>
+                        Automatically adjusts itself and allows you to move it in every direction
+                      </li>
+                      <li style="width: 100%">
+                        <p><b>Stylish Design</b><br>
+                          Aesthetically pleasing, which means that it enhances the room decor</p>
+                      </li>
+                      <li style="width: 100%">
+                        <p><b>Indicator Light</b><br>
+                          This indicator light on this dry iron lets you know when it is heated and ready to use</p>
+                      </li>
+                      <li style="width: 100%">
+                        <p><b>Teflon coated Soleplate</b><br>
+                          Glides smoothly on the fabric which quickens the task </p>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </ul>
+  </div>
+  <div class="column1">
+    <ul>
+      <li class="Image">
+        <img class="itemImg" src="img/fridge.jpeg">
+      </li>
+      <br>
+      <li class="Name">
+        Samsung 198 L Direct Cool Single Door with Base Drawer
+      </li>
+      <li>
+        <b> Rs. 17,490</b> &nbsp <s>
+          <font color="red">21,990</font>
+        </s>
+        <font color="green">&nbsp&nbsp 20% OFF</font>
+      </li>
+      <li style="text-align:left">
+        <p>Energy-Efficient<br>Digital Inverter Compressor</p>
+      </li>
+      <li class="ViewMore">
+        <a href="#myModalFridge" onclick="document.getElementById('myModalFridge').style.display='block'" id="myBtn">
+          View More </a>
+      </li>
+      <div id="myModalFridge" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close" onclick="document.getElementById('myModalFridge').style.display='none'">&times;</span>
+          <div class="ModalImage" style="text-align:left">
+            <img class="MItem" src="img/fridge.jpeg">
+          </div>
+          <div class="ModalDetails">
+            <ul>
+              <li>
+                <ul style="text-align:left">
+                  <li class="MName">
+                    Samsung 198 L Direct Cool Single Door 5 Star (2020) Refrigerator with Base Drawer
+                  </li>
+                  <br>
+                  <li>
+                    <b><span class="MPrice"> Rs. 17,490</span></b> &nbsp <s>
+                      <font color="red">21,990</font>
+                    </s>
+                    <font color="green">&nbsp&nbsp 20% OFF</font>
+                  </li>
+                  <br>
+                  <br>
+                  <li>
+                    <a href="#" class="AddToCart"> ADD TO CART </a>
+                  </li>
+                  <br>
+                  <br>
+                  <li>
+                    <b class="desc" style="color:rgb(96, 96, 96)">Description:</b>
+                    <ul style="width: 75%; float: right">
+                      <li style="width: 100%">
+                        This Samsung Direct Cool fridge is ideal for you. It is energy-efficient, which also makes it
+                        pocket-friendly. Additionally, it boasts the smart inverter compressor, which intelligently
+                        tracks cooling needs and provides efficient cooling to every corner of this fridge. Furthermore,
+                        you can keep your food fresh even during power cuts as it can easily work with your home
+                        inverter.
+                      </li>
+                      <li style="width: 100%">
+                        <p><b>Energy-Efficient</b><br>
+                          This Samsung fridge is energy-efficient, which means that it is pocket-friendly.</p>
+                      </li>
+                      <li style="width: 100%">
+                        <p><b>Digital Inverter Compressor</b><br>
+                          It uses the digital inverter compressor to intelligently track and accordingly supply cooling
+                          to the seven different levels of this fridge. The compressor also consumes less energy,
+                          provides efficient cooling, reduces noise, and enhances the life.</p>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </ul>
+  </div>
+  </center>
+  </div>
+  </div>
+  <footer class="footer">
+    <div class="footer-left">
+      <img src="img/IMG_20230811_130515.png">
+      <p>Buy with Happiness!😀</p>
+      <br>
+      <p>Follow us on social media</p>
+      <div class="socials">
+        <a href="#"><i class="fa-brands fa-facebook"></i></i></a>
+        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+        <a href="#"><i class="fa-brands fa-tumblr"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+      </div>
+    </div>
+    <ul class="footer-right">
+      <li>
+        <h2>Quick Links</h2>
+        <ul class="box">
+          <a href="index.html">
+            <li class="Home"> Home </li>
+          </a>
+          <a href="Grocery.html">
+            <li class="Groceries">Groceries </li>
+          </a>
+          <a href="ElecAppliances.html">
+            <li class="Household">Electronic Appliances </li>
+          </a>
+          <a href="PersonalCare.html">
+            <li class="PersonalCare"> Personal Care </li>
+          </a>
+          <a href="PackedFoods.html">
+            <li class="PackedFoods"> Packed Foods </li>
+          </a>
+          <a href="AboutUs.html">
+            <li class="AboutUs"> About Us </li>
+          </a>
+          <a href="ContactUs.html">
+            <li class="ContactUs">Contact Us </li>
+          </a>
+        </ul>
+      </li>
+      <li>
+        <h2>Address</h2>
+        <ul class="box">
+          <li><a href="#">Rachanakar Colony, Railway Station Road</a></li>
+          <li><a href="#">Near Gopat T point,</a></li>
+          <li><a href="#">Chhatrapati Sambhajinagar (Aurangabad), Maharashtra</a></li>
+        </ul>
+      </li>
+    </ul>
+    <div class="footer-bottom">
+      <p>All Rights Reserved | &copy; Copyright 2023</p>
+      <p>Designed and Developed by <span>Atharv Hatwalne</span></p>
+    </div>
+  </footer>
+</body>
+
+</html>
